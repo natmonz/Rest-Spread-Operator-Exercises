@@ -1,0 +1,69 @@
+REST-SPREAD-OPERATOR
+
+    function filterOutOdds(){
+        var nums = Array.prototype.slice.call(arguments);
+        return nums.filter(function(num) {
+            return num % 2 === 0;
+        });
+    }
+
+REFACTOR IT AND USE REST OPERATOR & ARROW FUNCTION
+
+    const filterOutOdds = (...arg) => arg.filter(n => n % 2 === 0);
+
+
+
+findMin
+
+    const findMin = (...arg) => Math.min(...arg); 
+
+
+mergeObjects
+
+    const mergeObjects = (obj1, obj2) => ({...obj1, ...obj2});
+
+
+doubleAndReturnArgs
+
+    const doubleAndReturnArgs = (arr, ...arg) => [...arr, ...args.map(n => n * 2)];
+
+SLICE AND DICE!
+
+    const removeRandom = items => {
+        let idx = Math.floor(Math.random() * items.length);
+            return [...items.slice(0, idx), ...items.slice(idx + 1)];
+    }
+
+
+    const extend = (arr1, arr2) => {
+        return [...arr1, ...arr2];
+    } 
+
+    
+    const addKeyVal = (obj1, key, val) => {
+        let newObj = {...obj}
+            newObj[key] = val;
+        
+        return newObj;
+    }
+
+
+    const removeKey = (obj, key) => {
+        newObj = {...obj}
+            delete newObj[key];
+
+        return newObj;
+    }
+
+
+    const combine = (obj1, obj2) => {
+         return {...obj1, ...obj2}
+    }
+
+
+    const update = (obj, key, val) => {
+        let newObj = {...obj}
+        newObj[key] = val;
+
+        return newObj; 
+    }
